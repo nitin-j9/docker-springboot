@@ -1,0 +1,10 @@
+version: '3'
+services:
+  webappp:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./build/libs:/work/app
