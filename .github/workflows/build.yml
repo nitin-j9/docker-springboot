@@ -18,6 +18,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'corretto'
+
+      - uses: actions/checkout@v4
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v3
 
