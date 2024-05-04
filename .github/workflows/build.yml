@@ -21,9 +21,6 @@ jobs:
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Assemble the Project
-        uses: ./gradlew assemble
-
       - name: Run the Tests
         uses: ./gradlew test
 
