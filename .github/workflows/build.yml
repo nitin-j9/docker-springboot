@@ -19,7 +19,14 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
       - name: Setup gradle
-        uses: gradle/gradle-build-action@v3
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Assemble the Project
+        uses: ./gradlew assemble
+
+      - name: Run the Tests
+        uses: ./gradlew test
+
       - name: Build with gradle
         run: ./gradlew build
 
@@ -29,3 +36,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build the Docker Image
         run: docker build . -f Dockerfile.dev -t j9.nitin/webapp:$(date +%s)
+    needs: jar-build
