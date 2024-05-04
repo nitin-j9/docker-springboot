@@ -21,4 +21,4 @@ jobs:
       - name: Setup gradle
         uses: gradle/gradle-build-action@v3
       - name: Build with gradle
-        run: ./gradle build
+        run: ./gradlew build
