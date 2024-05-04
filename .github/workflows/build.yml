@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  jar-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,3 +22,10 @@ jobs:
         uses: gradle/gradle-build-action@v3
       - name: Build with gradle
         run: ./gradlew build
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the Docker Image
+        run: docker build . -f Dockerfile.dev -t j9.nitin/webapp:$(date +%s)

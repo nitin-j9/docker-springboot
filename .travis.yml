@@ -1,9 +1,0 @@
-sudo: required
-services:
-  - docker
-
-before_install:
-  - docker build -t j9.nitin/webapp:latest -f Dockerfile.dev .
-
-script:
-  - docker run j9.nitin/webapp:latest
