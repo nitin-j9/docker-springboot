@@ -20,11 +20,7 @@ jobs:
           distribution: 'corretto'
 
       - name: Setup gradle
-        uses: gradle/gradle-build-action@v3
-        run: ls
-
-      - name: Run the Tests
-        uses: ./gradlew test
+        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
 
       - name: Build with gradle
         run: ./gradlew build
